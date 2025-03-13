@@ -1,0 +1,38 @@
+---
+import Aurora from '../blocks/Backgrounds/Aurora/Aurora';
+import RotatingText from '../blocks/TextAnimations/RotatingText/RotatingText';
+import GlitchText from '../blocks/TextAnimations/GlitchText/GlitchText';
+---
+
+<div id="container" class="min-h-screen">
+  <div id="aurora-container">
+    <Aurora 
+      client:load
+      blend={0.64}
+      amplitude={1.0}
+      speed={1.5} />
+  </div>
+  <main class="flex mt-50 items-center justify-center flex-col">
+    <div>
+      <GlitchText>thorcodingson.art</GlitchText>
+    </div>
+    <div class="">
+      <span class="text-zinc-500 font-bold text-2xl sm:text-3xl md:text-4xl inline-block align-middle">
+        Developing with 
+      </span>
+      <RotatingText
+        client:load
+        texts={['AWS', 'NestJS', 'PostgreSQL', 'Vue', 'TailwindCSS', 'Playwright']}
+        mainClassName="align-middle inline-block font-bold text-4xl px-2 sm:px-2 md:px-3 bg-emerald-500 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+        staggerFrom={"last"}
+        initial={{ y: "100%" }}
+        animate={{ y: 0 }}
+        exit={{ y: "-120%" }}
+        staggerDuration={0.025}
+        splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+        transition={{ type: "spring", damping: 30, stiffness: 400 }}
+        rotationInterval={2000}
+    />
+    </div>
+  </main>
+</div>
